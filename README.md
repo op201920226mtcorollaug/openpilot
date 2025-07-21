@@ -46,4 +46,4 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
 
 * This repository can and might break. Please discuss the issue in the thread linked above.
 * This repository may become obsolete as upstream support may be added to openpilot or sunnypilot. Please check the thread linked above for updates.
-* Last but not least, if you got the skills to help upstream support for this Corolla, please seriously considering picking up where [bscholer left off](https://github.com/commaai/openpilot/pull/26872) with the changes in this repo also as guidance. As it stands, you cannot get comma to support your hardware with these changes.
+* Last but not least, if you got the skills to help upstream support for this Corolla, please seriously considering picking up where [bscholer left off](https://github.com/commaai/openpilot/pull/26872) with the changes in this repo also as guidance. As it stands, you cannot get comma to support hardware issues with your comma device with these changes.
