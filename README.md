@@ -1,12 +1,12 @@
-# openpilot and forks for 2019-2022 6MT TSS2 Corollas
+# openpilot and forks for 2019-2022 6MT manual transmission TSS2 Corollas
 
 ![Shifter](https://github.com/user-attachments/assets/a7f471e8-0e70-4f9c-aac2-6d69815745ab)
 
 [Image from Hooniverse](https://www.hooniverse.com/2020-toyota-corolla-is-all-about-savethemanuals-but-will-you-buy-it/)
 
-This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `staging-c3-new` branches to support 2019-2022 6MT TSS2 Corollas.
+This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `staging-c3-new` branches to support 2019-2022 6MT manual transmission TSS2 Corollas.
 
-Efforts to upstream support for the 2019-2022 6MT TSS2 Corollas have stalled with a principal developer of the 2019-2022 Corolla 6MT TSS2 unable to [contribute additional time for upstreaming](https://discord.com/channels/469524606043160576/1391211035796439163/1391232320790331472) (join the comma Discord).
+Efforts to upstream support for the 2019-2022 6MT manual transmission TSS2 Corollas have stalled with a principal developer of the 2019-2022 Corolla 6MT manual transmission TSS2 support unable to [contribute additional time for upstreaming](https://discord.com/channels/469524606043160576/1391211035796439163/1391232320790331472) (join the comma Discord).
 
 Discussion about this repository can be found in the [comma.ai openpilot Discord](https://discord.comma.ai) in the [2019-2022 6MT Corolla Thread underneath #toyota-lexus](https://discord.com/channels/469524606043160576/1391211035796439163). **Note: You must first join the comma Discord using the invitation link above before you can access the specific Discord channel links.** If you have questions, please ask there, but not before reading this documentation, of course!
 
@@ -17,7 +17,7 @@ A GitHub Actions workflow runs on a daily schedule to:
 1.  Clone the latest versions of openpilot and sunnypilot.
 2.  Apply the necessary patches from the `/patches` directory.
     * Force the vehicle to be identified as a 2019-2022 TSS2 Corolla.
-    * Modify the openpilot's car state tracker to accept the 2019-2022 6MT TSS2 Corolla's speed lockout.
+    * Modify the openpilot's car state tracker to accept the 2019-2022 6MT manual transmission TSS2 Corolla's speed lockout.
 3.  Force-push the patched codebases to the `op-nightly-dev` and `sp-staging-c3-new` branches in this repository.
 
 ## Usage
