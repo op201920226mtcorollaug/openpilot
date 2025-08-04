@@ -12,7 +12,7 @@ Discussion about this repository can be found in the [comma.ai openpilot Discord
 
 ## How this repository Works
 
-A GitHub Actions workflow runs on a daily schedule to:
+[A GitHub Actions workflow](https://github.com/op201920226mtcorollaug/openpilot/actions) runs on a daily schedule to:
 
 1.  Clone the latest versions of openpilot and sunnypilot.
 2.  Apply the necessary patches from the `/patches` directory.
