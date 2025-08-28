@@ -18,10 +18,8 @@ mkdir -p tmp
 
 # Clone Repositories
 echo "Cloning repositories..."
-git clone --depth=1 --branch="$OP_BRANCH" "$OP_REPO" "$OP_DIR"
-git -C "$OP_DIR" fsck
-git clone --depth=1 --branch="$SP_BRANCH" "$SP_REPO" "$SP_DIR"
-git -C "$SP_DIR" fsck
+git clone --branch="$OP_BRANCH" "$OP_REPO" "$OP_DIR"
+git clone --branch="$SP_BRANCH" "$SP_REPO" "$SP_DIR"
 
 # Apply Patches
 echo "Applying patches..."
