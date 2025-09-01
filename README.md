@@ -32,6 +32,7 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
    * comma.ai openpilot - _Patched version of comma's software, kept around more for upstreaming preview and testing than actual usage_
      * `op201920226mtcorollaug/op-nightly-dev`
      * If you have comma hardware issues, it's possible that comma might be lenient with you if you use this for support, but it's really not guaranteed. It's best to switch the device to using comma's unpatched codebase in dashcam mode if you have hardware issues for support.
+  * Hardware support for the above is the same as upstream's. Meaning `op-nightly-dev` only supports the C3X, for example.
 5. That's it, you're done! The device will install the patched version of openpilot or sunnypilot.
 6. This repository will automatically pull down and patch from upstream software and push to itself so you will get prompted to reboot for updates once in a while.
 
