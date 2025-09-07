@@ -44,7 +44,7 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
 * See this video for how it behaves in comma openpilot: https://youtu.be/ITxknEpp9R8
 * Sunnypilot with MADS behaves differently.
   * WITHOUT MADS (like in comma openpilot): You can’t engage anything under 18 mph and whenever you engage it over 18 mph, you are also engaging adaptive cruise control
-  * WITH MADS (default out of box in sunnypilot): In slower traffic you can still keep the steering assist enabled so you just have to control speed/shifting gears
+  * WITH MADS (a sunnypilot setting, on by default): In slower traffic you can still keep the steering assist enabled so you just have to control speed/shifting gears
 
 ### Later Usage
 
