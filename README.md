@@ -29,7 +29,7 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
 3. In the text field, enter the following:
    * sunnypilot - _The community of 2019-2022 6MT TSS2 Corolla users recommend this for users with MADS pre-enabled_
      * Comma 3X:
-       * `op201920226mtcorollaug/sp-release` (Recommended)
+       * `op201920226mtcorollaug/sp-release-tizi` (Recommended)
        * `op201920226mtcorollaug/sp-staging`
        * `op201920226mtcorollaug/sp-dev`
      * Comma 3:
