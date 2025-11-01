@@ -18,7 +18,7 @@ Discussion about this repository can be found in the [comma.ai openpilot Discord
 2.  Apply the necessary patches from the `/patches` directory.
     * Force the vehicle to be identified as a 2019-2022 TSS2 Corolla.
     * Modify the openpilot's car state tracker to accept the 2019-2022 6MT manual transmission TSS2 Corolla's speed lockout.
-3.  Force-push the patched codebases to the `op-nightly-dev`, `sp-release`, `sp-staging`, `sp-dev`, and `sp-staging-tici` branches in this repository.
+3.  Force-push the patched codebases to the `op-nightly-dev`, `sp-release-tizi`, `sp-staging`, `sp-dev`, and `sp-staging-tici` branches in this repository.
 
 ## Usage
 
