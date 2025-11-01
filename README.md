@@ -4,7 +4,7 @@
 
 [Image from Hooniverse](https://www.hooniverse.com/2020-toyota-corolla-is-all-about-savethemanuals-but-will-you-buy-it/)
 
-This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `staging` and `staging-tici` branches to support 2019-2022 6MT manual transmission TSS2 Corollas.
+This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `staging` and `staging-tici` branches to support 2019-2022 6MT manual transmission TSS2 Corollas. See the [References](#references) section for more information on the branches used.
 
 Efforts to upstream support for the 2019-2022 6MT manual transmission TSS2 Corollas have stalled with a principal developer of the 2019-2022 Corolla 6MT manual transmission TSS2 support unable to [contribute additional time for upstreaming](https://discord.com/channels/469524606043160576/1391211035796439163/1391232320790331472) (join the comma Discord).
 
@@ -52,3 +52,8 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
 * This repository can and might break. Please discuss the issue in the thread linked above.
 * This repository may become obsolete as upstream support may be added to openpilot or sunnypilot. Please check the thread linked above for updates.
 * Last but not least, if you got the skills to help upstream support for this Corolla, please seriously considering picking up where [bscholer left off](https://github.com/commaai/openpilot/pull/26872) with the changes in this repo also as guidance. As it stands, you cannot get comma to support hardware issues with your comma device with these changes.
+
+## References
+
+*   **comma.ai openpilot branches**: https://github.com/commaai/openpilot?tab=readme-ov-file#branches
+*   **sunnypilot branches**: https://community.sunnypilot.ai/t/recommended-branch-installations/235
