@@ -8,6 +8,6 @@
   * `tmp/` is `gitignore`d to prevent committing temporary files.
   * Apply patches to the cloned repository to support the 6MT TSS2 Corollas.
   * Commit the changes to a new branch in this repository.
-  * Branches are named `op-nightly-dev` for openpilot and `sp-staging-c3-new` for sunnypilot.
+  * Branches are named `op-nightly-dev` for openpilot, `sp-staging` for sunnypilot C3X, and `sp-staging-tici` for sunnypilot C3.
 * The GitHub Action will run on a schedule (e.g., daily) to ensure the repository is up-to-date with the latest changes from the upstream repositories.
 * The repository will have a README.md file that explains how to use the repository, including how to install the patched version of openpilot or sunnypilot on a comma three device.

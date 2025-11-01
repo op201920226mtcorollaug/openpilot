@@ -4,7 +4,7 @@
 
 [Image from Hooniverse](https://www.hooniverse.com/2020-toyota-corolla-is-all-about-savethemanuals-but-will-you-buy-it/)
 
-This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `staging-c3-new` branches to support 2019-2022 6MT manual transmission TSS2 Corollas.
+This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `staging` and `staging-tici` branches to support 2019-2022 6MT manual transmission TSS2 Corollas.
 
 Efforts to upstream support for the 2019-2022 6MT manual transmission TSS2 Corollas have stalled with a principal developer of the 2019-2022 Corolla 6MT manual transmission TSS2 support unable to [contribute additional time for upstreaming](https://discord.com/channels/469524606043160576/1391211035796439163/1391232320790331472) (join the comma Discord).
 
@@ -18,7 +18,7 @@ Discussion about this repository can be found in the [comma.ai openpilot Discord
 2.  Apply the necessary patches from the `/patches` directory.
     * Force the vehicle to be identified as a 2019-2022 TSS2 Corolla.
     * Modify the openpilot's car state tracker to accept the 2019-2022 6MT manual transmission TSS2 Corolla's speed lockout.
-3.  Force-push the patched codebases to the `op-nightly-dev` and `sp-staging-c3-new` branches in this repository.
+3.  Force-push the patched codebases to the `op-nightly-dev`, `sp-staging`, and `sp-staging-tici` branches in this repository.
 
 ## Usage
 
@@ -28,11 +28,12 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
 2. Choose `Custom Software` when installing the software.
 3. In the text field, enter the following:
    * sunnypilot - _The community of 2019-2022 6MT TSS2 Corolla users recommend this for users with MADS pre-enabled_
-     * `op201920226mtcorollaug/sp-staging-c3-new`
+     * comma 3X: `op201920226mtcorollaug/sp-staging`
+     * comma 3: `op201920226mtcorollaug/sp-staging-tici`
    * comma.ai openpilot - _Patched version of comma's software, kept around more for upstreaming preview and testing than actual usage_
      * `op201920226mtcorollaug/op-nightly-dev`
      * If you have comma hardware issues, it's possible that comma might be lenient with you if you use this for support, but it's really not guaranteed. It's best to switch the device to using comma's unpatched codebase in dashcam mode if you have hardware issues for support.
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Hardware support for the above is the same as upstream's. Meaning `op-nightly-dev` only supports the C3X, for example.
 5. That's it, you're done! The device will install the patched version of openpilot or sunnypilot.
 6. This repository will automatically pull down and patch from upstream software and push to itself so you will get prompted to reboot for updates once in a while.
