@@ -18,7 +18,7 @@ SP_C3_STAGING_DIR="tmp/sunnypilot-c3-staging"
 SP_C3_STAGING_PATCH_BRANCH="sp-staging-tici"
 
 SP_C3X_RELEASE_REPO="https://github.com/sunnypilot/sunnypilot.git"
-SP_C3X_RELEASE_BRANCH="release"
+SP_C3X_RELEASE_BRANCH="release-tizi"
 SP_C3X_RELEASE_DIR="tmp/sunnypilot-c3x-release"
 SP_C3X_RELEASE_PATCH_BRANCH="sp-release"
 
