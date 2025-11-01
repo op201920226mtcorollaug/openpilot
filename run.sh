@@ -22,7 +22,6 @@ SP_C3X_RELEASE_BRANCH="release"
 SP_C3X_RELEASE_DIR="tmp/sunnypilot-c3x-release"
 SP_C3X_RELEASE_PATCH_BRANCH="sp-release"
 
-
 SP_C3X_DEV_REPO="https://github.com/sunnypilot/sunnypilot.git"
 SP_C3X_DEV_BRANCH="dev"
 SP_C3X_DEV_DIR="tmp/sunnypilot-c3x-dev"
