@@ -4,13 +4,13 @@
 
 [Image from Hooniverse](https://www.hooniverse.com/2020-toyota-corolla-is-all-about-savethemanuals-but-will-you-buy-it/)
 
-This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `release`, `staging`, `dev`, and `staging-tici` branches to support 2019-2022 6MT manual transmission TSS2 Corollas. See the [References](#references) section for more information on the branches used.
+This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `release`, `staging`, `dev`, and `staging-tici` branches to support 2019-2022 6MT manual transmission TSS2 Corollas. See the [References](#references) section for more information on the source branches.
 
-Efforts to upstream support for the 2019-2022 6MT manual transmission TSS2 Corollas have stalled with a principal developer of the 2019-2022 Corolla 6MT manual transmission TSS2 support unable to [contribute additional time for upstreaming](https://discord.com/channels/469524606043160576/1391211035796439163/1391232320790331472) (join the comma Discord).
+Efforts to upstream support for 2019-2022 6MT manual transmission TSS2 Corollas have stalled, with a principal developer of the 2019-2022 Corolla 6MT manual transmission TSS2 support unable to [contribute additional time for upstreaming](https://discord.com/channels/469524606043160576/1391211035796439163/1391232320790331472) (join the comma Discord).
 
 Discussion about this repository can be found in the [comma.ai openpilot Discord](https://discord.comma.ai) in the [2019-2022 6MT Corolla Thread underneath #toyota-lexus](https://discord.com/channels/469524606043160576/1391211035796439163). **Note: You must first join the comma Discord using the invitation link above before you can access the specific Discord channel links.** If you have questions, please ask there, but not before reading this documentation, of course!
 
-## How this repository Works
+## How This Repository Works
 
 [A GitHub Actions workflow](https://github.com/op201920226mtcorollaug/openpilot/actions) runs on a daily schedule to:
 
@@ -22,7 +22,7 @@ Discussion about this repository can be found in the [comma.ai openpilot Discord
 
 ## Usage
 
-Users will install a patched version of openpilot or sunnypilot on your comma three family device from this repository.
+Users can install a patched version of openpilot or sunnypilot on a comma three family device from this repository.
 
 1. Reset the comma three device. You can do this by tapping on the screen during bootup, uninstalling the software from the Settings menu, or using https://flash.comma.ai.
 2. Choose `Custom Software` when installing the software.
@@ -46,7 +46,7 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
 ## Expected Behavior
 
 * There is no stop and go in 6MT TSS2 Corollas.
-* OP activates: In gears > 1st, and at > ~18mph. Below that, everything disengages (unless using sunnypilot, only ACC disengages).
+* OP activates in gears > 1st and at > ~18mph. Below that, everything disengages (unless using sunnypilot, where only ACC disengages).
 * See this video for how it behaves in comma openpilot: https://youtu.be/ITxknEpp9R8
 * Sunnypilot with MADS behaves differently.
   * WITHOUT MADS (like in comma openpilot): You can’t engage anything under 18 mph and whenever you engage it over 18 mph, you are also engaging adaptive cruise control
@@ -56,7 +56,7 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
 
 * This repository can and might break. Please discuss the issue in the thread linked above.
 * This repository may become obsolete as upstream support may be added to openpilot or sunnypilot. Please check the thread linked above for updates.
-* Last but not least, if you got the skills to help upstream support for this Corolla, please seriously considering picking up where [bscholer left off](https://github.com/commaai/openpilot/pull/26872) with the changes in this repo also as guidance. As it stands, you cannot get comma to support hardware issues with your comma device with these changes.
+* Last but not least, if you have the skills to help upstream support for this Corolla, please seriously consider picking up where [bscholer left off](https://github.com/commaai/openpilot/pull/26872), using the changes in this repo as guidance. As it stands, comma will not support hardware issues with your comma device while using these changes.
 
 ## References
 
