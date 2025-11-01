@@ -32,7 +32,7 @@ Users can install a patched version of openpilot or sunnypilot on a comma three 
 1. Reset the comma three device. You can do this by tapping on the screen during bootup, uninstalling the software from the Settings menu, or using https://flash.comma.ai.
 2. Choose `Custom Software` when installing the software.
 3. In the text field, enter the following:
-   * sunnypilot - _The community of 2019-2022 6MT TSS2 Corolla users recommend this for users with MADS pre-enabled_
+   * sunnypilot - _The community of 2019-2022 6MT TSS2 Corolla users recommend this for users with [MADS](#expected-behavior) pre-enabled_
      * comma 3X:
        * `op201920226mtcorollaug/sp-release-tizi` (Recommended)
        * `op201920226mtcorollaug/sp-staging`
