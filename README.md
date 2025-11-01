@@ -4,7 +4,7 @@
 
 [Image from Hooniverse](https://www.hooniverse.com/2020-toyota-corolla-is-all-about-savethemanuals-but-will-you-buy-it/)
 
-This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `release`, `staging`, `dev`, `release-tici`, and `staging-tici` branches to support 2019-2022 6MT manual transmission TSS2 Corollas. See the [References](#references) section for more information on the branches used.
+This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `release`, `staging`, `dev`, and `staging-tici` branches to support 2019-2022 6MT manual transmission TSS2 Corollas. See the [References](#references) section for more information on the branches used.
 
 Efforts to upstream support for the 2019-2022 6MT manual transmission TSS2 Corollas have stalled with a principal developer of the 2019-2022 Corolla 6MT manual transmission TSS2 support unable to [contribute additional time for upstreaming](https://discord.com/channels/469524606043160576/1391211035796439163/1391232320790331472) (join the comma Discord).
 
@@ -18,7 +18,7 @@ Discussion about this repository can be found in the [comma.ai openpilot Discord
 2.  Apply the necessary patches from the `/patches` directory.
     * Force the vehicle to be identified as a 2019-2022 TSS2 Corolla.
     * Modify the openpilot's car state tracker to accept the 2019-2022 6MT manual transmission TSS2 Corolla's speed lockout.
-3.  Force-push the patched codebases to the `op-nightly-dev`, `sp-release`, `sp-staging`, `sp-dev`, `sp-release-tici`, and `sp-staging-tici` branches in this repository.
+3.  Force-push the patched codebases to the `op-nightly-dev`, `sp-release`, `sp-staging`, `sp-dev`, and `sp-staging-tici` branches in this repository.
 
 ## Usage
 
@@ -28,12 +28,10 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
 2. Choose `Custom Software` when installing the software.
 3. In the text field, enter the following:
    * sunnypilot - _The community of 2019-2022 6MT TSS2 Corolla users recommend this for users with MADS pre-enabled_
-     * Comma 3X:
-       * `op201920226mtcorollaug/sp-release`
+     * Comma 3X: `op201920226mtcorollaug/sp-release` (Recommended)
        * `op201920226mtcorollaug/sp-staging`
        * `op201920226mtcorollaug/sp-dev`
      * Comma 3:
-       * `op201920226mtcorollaug/sp-release-tici`
        * `op201920226mtcorollaug/sp-staging-tici`
    * comma.ai openpilot - _Patched version of comma's software, kept around more for upstreaming preview and testing than actual usage_
      * comma 3X:`op201920226mtcorollaug/op-nightly-dev`

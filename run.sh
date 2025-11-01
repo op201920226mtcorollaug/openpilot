@@ -22,10 +22,6 @@ SP_C3X_RELEASE_BRANCH="release"
 SP_C3X_RELEASE_DIR="tmp/sunnypilot-c3x-release"
 SP_C3X_RELEASE_PATCH_BRANCH="sp-release"
 
-SP_C3_RELEASE_REPO="https://github.com/sunnypilot/sunnypilot.git"
-SP_C3_RELEASE_BRANCH="release-tici"
-SP_C3_RELEASE_DIR="tmp/sunnypilot-c3-release"
-SP_C3_RELEASE_PATCH_BRANCH="sp-release-tici"
 
 SP_C3X_DEV_REPO="https://github.com/sunnypilot/sunnypilot.git"
 SP_C3X_DEV_BRANCH="dev"
@@ -42,7 +38,6 @@ git clone --depth 1 --branch="$OP_BRANCH" "$OP_REPO" "$OP_DIR"
 git clone --depth 1 --branch="$SP_C3X_STAGING_BRANCH" "$SP_C3X_STAGING_REPO" "$SP_C3X_STAGING_DIR"
 git clone --depth 1 --branch="$SP_C3_STAGING_BRANCH" "$SP_C3_STAGING_REPO" "$SP_C3_STAGING_DIR"
 git clone --depth 1 --branch="$SP_C3X_RELEASE_BRANCH" "$SP_C3X_RELEASE_REPO" "$SP_C3X_RELEASE_DIR"
-git clone --depth 1 --branch="$SP_C3_RELEASE_BRANCH" "$SP_C3_RELEASE_REPO" "$SP_C3_RELEASE_DIR"
 git clone --depth 1 --branch="$SP_C3X_DEV_BRANCH" "$SP_C3X_DEV_REPO" "$SP_C3X_DEV_DIR"
 
 # Apply Patches
@@ -59,8 +54,6 @@ echo "Patched sunnypilot C3 staging."
 git -C "$SP_C3X_RELEASE_DIR" apply ../../patches/sunnypilot.patch
 echo "Patched sunnypilot C3X release."
 
-git -C "$SP_C3_RELEASE_DIR" apply ../../patches/sunnypilot.patch
-echo "Patched sunnypilot C3 release."
 
 git -C "$SP_C3X_DEV_DIR" apply ../../patches/sunnypilot.patch
 echo "Patched sunnypilot C3X dev."
@@ -109,15 +102,6 @@ GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00
 git push origin "HEAD:$SP_C3X_RELEASE_PATCH_BRANCH" --force
 cd -
 
-# sunnypilot C3 release
-cd "$SP_C3_RELEASE_DIR"
-git config user.name "Automated Bot"
-git config user.email "actions@github.com"
-git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-git add .
-GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
-git push origin "HEAD:$SP_C3_RELEASE_PATCH_BRANCH" --force
-cd -
 
 # sunnypilot C3X dev
 cd "$SP_C3X_DEV_DIR"
