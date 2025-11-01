@@ -31,7 +31,8 @@ Users will install a patched version of openpilot or sunnypilot on your comma th
      * comma 3X: `op201920226mtcorollaug/sp-staging`
      * comma 3: `op201920226mtcorollaug/sp-staging-tici`
    * comma.ai openpilot - _Patched version of comma's software, kept around more for upstreaming preview and testing than actual usage_
-     * `op201920226mtcorollaug/op-nightly-dev`
+     * comma 3X:`op201920226mtcorollaug/op-nightly-dev`
+     * comma 3: _Not supported_
      * If you have comma hardware issues, it's possible that comma might be lenient with you if you use this for support, but it's really not guaranteed. It's best to switch the device to using comma's unpatched codebase in dashcam mode if you have hardware issues for support.
 > [!IMPORTANT]
 > Hardware support for the above is the same as upstream's. Meaning `op-nightly-dev` only supports the C3X, for example.
