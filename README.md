@@ -1,5 +1,7 @@
 # openpilot and forks for 2019-2022 6MT manual transmission TSS2 Corollas
 
+Note: While the 2019-2022 Corolla is listed on https://comma.ai/vehicles, it's not clear that comma.ai only supports the automatic transmission version from their list. With some modifications, manual transmission versions of these Corollas can be supported.
+
 ![Shifter](https://github.com/user-attachments/assets/a7f471e8-0e70-4f9c-aac2-6d69815745ab)
 
 [Image from Hooniverse](https://www.hooniverse.com/2020-toyota-corolla-is-all-about-savethemanuals-but-will-you-buy-it/)
