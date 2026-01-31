@@ -1,6 +1,6 @@
 --- a/opendbc_repo/opendbc/car/toyota/carstate.py
 +++ b/opendbc_repo/opendbc/car/toyota/carstate.py
-@@ -163,7 +163,7 @@
+@@ -164,7 +164,7 @@
      if (self.CP.carFingerprint not in TSS2_CAR and self.CP.carFingerprint not in UNSUPPORTED_DSU_CAR) or \
         (self.CP.carFingerprint in TSS2_CAR and self.acc_type == 1):
        if self.CP.openpilotLongitudinalControl:
@@ -11,7 +11,7 @@
      if self.CP.carFingerprint not in (NO_STOP_TIMER_CAR - TSS2_CAR):
 --- a/launch_env.sh
 +++ b/launch_env.sh
-@@ -11,3 +11,4 @@
+@@ -13,3 +13,4 @@
  fi
 
  export STAGING_ROOT="/data/safe_staging"
