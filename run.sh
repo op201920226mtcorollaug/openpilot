@@ -1,6 +1,26 @@
 #!/bin/bash
 set -e
 
+# Retry a git push up to 5 times with exponential backoff
+git_push_with_retry() {
+  local max_attempts=5
+  local attempt=1
+  local delay=5
+  while true; do
+    if git push --no-thin "$@"; then
+      return 0
+    fi
+    if [ "$attempt" -ge "$max_attempts" ]; then
+      echo "Push failed after $max_attempts attempts." >&2
+      return 1
+    fi
+    echo "Push failed (attempt $attempt/$max_attempts). Retrying in ${delay}s..." >&2
+    sleep "$delay"
+    attempt=$((attempt + 1))
+    delay=$((delay * 2))
+  done
+}
+
 # Configuration
 OP_REPO="https://github.com/commaai/openpilot.git"
 OP_BRANCH="nightly-dev"
@@ -68,7 +88,7 @@ git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
 GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
-git push origin "HEAD:$OP_PATCH_BRANCH" --force
+git_push_with_retry origin "HEAD:$OP_PATCH_BRANCH" --force
 cd -
 
 # sunnypilot C3X staging
@@ -78,7 +98,7 @@ git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
 GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
-git push origin "HEAD:$SP_C3X_STAGING_PATCH_BRANCH" --force
+git_push_with_retry origin "HEAD:$SP_C3X_STAGING_PATCH_BRANCH" --force
 cd -
 
 # sunnypilot C3 staging
@@ -88,7 +108,7 @@ git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
 GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
-git push origin "HEAD:$SP_C3_STAGING_PATCH_BRANCH" --force
+git_push_with_retry origin "HEAD:$SP_C3_STAGING_PATCH_BRANCH" --force
 cd -
 
 # sunnypilot C3X release
@@ -98,7 +118,7 @@ git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
 GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
-git push origin "HEAD:$SP_C3X_RELEASE_PATCH_BRANCH" --force
+git_push_with_retry origin "HEAD:$SP_C3X_RELEASE_PATCH_BRANCH" --force
 cd -
 
 
@@ -109,7 +129,7 @@ git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
 GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
-git push origin "HEAD:$SP_C3X_DEV_PATCH_BRANCH" --force
+git_push_with_retry origin "HEAD:$SP_C3X_DEV_PATCH_BRANCH" --force
 cd -
 
 echo "Script finished."
