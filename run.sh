@@ -21,6 +21,15 @@ git_push_with_retry() {
   done
 }
 
+# Commit using the cloned source branch's HEAD date so output branch badges track
+# upstream freshness without creating new commit hashes on no-op daily runs.
+git_commit_with_source_date() {
+  local message="$1"
+  local source_date
+  source_date=$(git log -1 --format=%cI HEAD)
+  GIT_AUTHOR_DATE="$source_date" GIT_COMMITTER_DATE="$source_date" git commit -m "$message"
+}
+
 # Configuration
 OP_REPO="https://github.com/commaai/openpilot.git"
 OP_BRANCH="nightly-dev"
@@ -87,7 +96,7 @@ git config user.name "Automated Bot"
 git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
-GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
+git_commit_with_source_date "Apply 6MT TSS2 Corolla patches"
 git_push_with_retry origin "HEAD:$OP_PATCH_BRANCH" --force
 cd -
 
@@ -97,7 +106,7 @@ git config user.name "Automated Bot"
 git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
-GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
+git_commit_with_source_date "Apply 6MT TSS2 Corolla patches"
 git_push_with_retry origin "HEAD:$SP_C3X_STAGING_PATCH_BRANCH" --force
 cd -
 
@@ -107,7 +116,7 @@ git config user.name "Automated Bot"
 git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
-GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
+git_commit_with_source_date "Apply 6MT TSS2 Corolla patches"
 git_push_with_retry origin "HEAD:$SP_C3_STAGING_PATCH_BRANCH" --force
 cd -
 
@@ -117,7 +126,7 @@ git config user.name "Automated Bot"
 git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
-GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
+git_commit_with_source_date "Apply 6MT TSS2 Corolla patches"
 git_push_with_retry origin "HEAD:$SP_C3X_RELEASE_PATCH_BRANCH" --force
 cd -
 
@@ -128,7 +137,7 @@ git config user.name "Automated Bot"
 git config user.email "actions@github.com"
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git add .
-GIT_AUTHOR_DATE='2021-08-08 00:00:00 +0000' GIT_COMMITTER_DATE='2021-08-08 00:00:00 +0000' git commit -m "Apply 6MT TSS2 Corolla patches"
+git_commit_with_source_date "Apply 6MT TSS2 Corolla patches"
 git_push_with_retry origin "HEAD:$SP_C3X_DEV_PATCH_BRANCH" --force
 cd -
 

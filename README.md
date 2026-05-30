@@ -21,6 +21,13 @@ Discussion about this repository can be found in the [comma.ai openpilot Discord
     * Force the vehicle to be identified as a 2019-2022 TSS2 Corolla.
     * Modify the openpilot's car state tracker to accept the 2019-2022 6MT manual transmission TSS2 Corolla's speed lockout.
 3.  Force-push the patched codebases to the `op-nightly-dev`, `sp-release-tizi`, `sp-staging`, `sp-dev`, and `sp-staging-tici` branches in this repository.
+
+    [![op-nightly-dev last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/op-nightly-dev?label=op-nightly-dev)](https://github.com/op201920226mtcorollaug/openpilot/tree/op-nightly-dev)
+    [![sp-release-tizi last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/sp-release-tizi?label=sp-release-tizi)](https://github.com/op201920226mtcorollaug/openpilot/tree/sp-release-tizi)
+    [![sp-staging last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/sp-staging?label=sp-staging)](https://github.com/op201920226mtcorollaug/openpilot/tree/sp-staging)
+    [![sp-dev last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/sp-dev?label=sp-dev)](https://github.com/op201920226mtcorollaug/openpilot/tree/sp-dev)
+    [![sp-staging-tici last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/sp-staging-tici?label=sp-staging-tici)](https://github.com/op201920226mtcorollaug/openpilot/tree/sp-staging-tici)
+
 4. Two usable scenarios:
  * The devices running these branches will then get notified of an update and prompt the user to reboot to install the latest patched version, if there are any changes.
  * Users can install these branches on their comma three family devices using the instructions below.
