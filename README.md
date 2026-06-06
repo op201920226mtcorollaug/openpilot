@@ -51,8 +51,8 @@ Users can install a patched version of openpilot or sunnypilot on a comma three 
      * comma 3:
        * `op201920226mtcorollaug/sp-staging-tici`
    * comma.ai openpilot - _Patched version of comma's software, kept around more for upstreaming preview and testing than actual usage_
-     * comma four: `op201920226mtcorollaug/sp-dev`
-     * comma 3X:`op201920226mtcorollaug/op-nightly-dev`     
+     * comma four: `op201920226mtcorollaug/op-nightly-dev`
+     * comma 3X: `op201920226mtcorollaug/op-nightly-dev`
      * comma 3: _Not supported_
      * If you have comma hardware issues, it's possible that comma might be lenient with you if you use this for support, but it's really not guaranteed. It's best to switch the device to using comma's unpatched codebase in dashcam mode if you have hardware issues for support.
 > [!IMPORTANT]
