@@ -46,6 +46,11 @@ SP_C3_STAGING_BRANCH="staging-tici"
 SP_C3_STAGING_DIR="tmp/sunnypilot-c3-staging"
 SP_C3_STAGING_PATCH_BRANCH="sp-staging-tici"
 
+SP_C4_RELEASE_REPO="https://github.com/sunnypilot/sunnypilot.git"
+SP_C4_RELEASE_BRANCH="release-mici"
+SP_C4_RELEASE_DIR="tmp/sunnypilot-c4-release"
+SP_C4_RELEASE_PATCH_BRANCH="sp-release-mici"
+
 SP_C3X_RELEASE_REPO="https://github.com/sunnypilot/sunnypilot.git"
 SP_C3X_RELEASE_BRANCH="release-tizi"
 SP_C3X_RELEASE_DIR="tmp/sunnypilot-c3x-release"
@@ -65,6 +70,7 @@ echo "Cloning repositories..."
 git clone --depth 1 --branch="$OP_BRANCH" "$OP_REPO" "$OP_DIR"
 git clone --depth 1 --branch="$SP_C3X_STAGING_BRANCH" "$SP_C3X_STAGING_REPO" "$SP_C3X_STAGING_DIR"
 git clone --depth 1 --branch="$SP_C3_STAGING_BRANCH" "$SP_C3_STAGING_REPO" "$SP_C3_STAGING_DIR"
+git clone --depth 1 --branch="$SP_C4_RELEASE_BRANCH" "$SP_C4_RELEASE_REPO" "$SP_C4_RELEASE_DIR"
 git clone --depth 1 --branch="$SP_C3X_RELEASE_BRANCH" "$SP_C3X_RELEASE_REPO" "$SP_C3X_RELEASE_DIR"
 git clone --depth 1 --branch="$SP_C3X_DEV_BRANCH" "$SP_C3X_DEV_REPO" "$SP_C3X_DEV_DIR"
 
@@ -78,6 +84,9 @@ echo "Patched sunnypilot C3X staging."
 
 git -C "$SP_C3_STAGING_DIR" apply ../../patches/sunnypilot.patch
 echo "Patched sunnypilot C3 staging."
+
+git -C "$SP_C4_RELEASE_DIR" apply ../../patches/sunnypilot.patch
+echo "Patched sunnypilot C4 release."
 
 git -C "$SP_C3X_RELEASE_DIR" apply ../../patches/sunnypilot.patch
 echo "Patched sunnypilot C3X release."
@@ -118,6 +127,16 @@ git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${G
 git add .
 git_commit_with_source_date "Apply 6MT TSS2 Corolla patches"
 git_push_with_retry origin "HEAD:$SP_C3_STAGING_PATCH_BRANCH" --force
+cd -
+
+# sunnypilot C4 release
+cd "$SP_C4_RELEASE_DIR"
+git config user.name "Automated Bot"
+git config user.email "actions@github.com"
+git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+git add .
+git_commit_with_source_date "Apply 6MT TSS2 Corolla patches"
+git_push_with_retry origin "HEAD:$SP_C4_RELEASE_PATCH_BRANCH" --force
 cd -
 
 # sunnypilot C3X release

@@ -6,7 +6,7 @@ Note: While the 2019-2022 Corolla is listed on https://comma.ai/vehicles, it's n
 
 [Image from Hooniverse](https://www.hooniverse.com/2020-toyota-corolla-is-all-about-savethemanuals-but-will-you-buy-it/)
 
-This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `release`, `staging`, `dev`, and `staging-tici` branches to support 2019-2022 6MT manual transmission TSS2 Corollas. See the [References](#references) section for more information on the source branches.
+This is an automated repository that patches comma.ai openpilot's `nightly-dev` and sunnypilot's `release-mici`, `release-tizi`, `staging`, `dev`, and `staging-tici` branches to support 2019-2022 6MT manual transmission TSS2 Corollas. See the [References](#references) section for more information on the source branches.
 
 Efforts to upstream support for 2019-2022 6MT manual transmission TSS2 Corollas have stalled, with a principal developer of the 2019-2022 Corolla 6MT manual transmission TSS2 support unable to [contribute additional time for upstreaming](https://discord.com/channels/469524606043160576/1391211035796439163/1391232320790331472) (join the comma Discord) and minding the [pull request](https://github.com/commaai/openpilot/pull/26872).
 
@@ -20,9 +20,10 @@ Discussion about this repository can be found in the [comma.ai openpilot Discord
 2.  Apply the necessary patches from the `/patches` directory.
     * Force the vehicle to be identified as a 2019-2022 TSS2 Corolla.
     * Modify the openpilot's car state tracker to accept the 2019-2022 6MT manual transmission TSS2 Corolla's speed lockout.
-3.  Force-push the patched codebases to the `op-nightly-dev`, `sp-release-tizi`, `sp-staging`, `sp-dev`, and `sp-staging-tici` branches in this repository.
+3.  Force-push the patched codebases to the `op-nightly-dev`, `sp-release-mici`, `sp-release-tizi`, `sp-staging`, `sp-dev`, and `sp-staging-tici` branches in this repository.
 
     [![op-nightly-dev last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/op-nightly-dev?label=op-nightly-dev)](https://github.com/op201920226mtcorollaug/openpilot/tree/op-nightly-dev)
+    [![sp-release-mici last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/sp-release-mici?label=sp-release-mici)](https://github.com/op201920226mtcorollaug/openpilot/tree/sp-release-mici)
     [![sp-release-tizi last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/sp-release-tizi?label=sp-release-tizi)](https://github.com/op201920226mtcorollaug/openpilot/tree/sp-release-tizi)
     [![sp-staging last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/sp-staging?label=sp-staging)](https://github.com/op201920226mtcorollaug/openpilot/tree/sp-staging)
     [![sp-dev last commit](https://img.shields.io/github/last-commit/op201920226mtcorollaug/openpilot/sp-dev?label=sp-dev)](https://github.com/op201920226mtcorollaug/openpilot/tree/sp-dev)
@@ -40,7 +41,8 @@ Users can install a patched version of openpilot or sunnypilot on a comma three 
 2. Choose `Custom Software` when installing the software.
 3. In the text field, enter the following:
    * sunnypilot - _The community of 2019-2022 6MT TSS2 Corolla users recommend this for users with [MADS](#expected-behavior) pre-enabled_
-     * comma four:       
+     * comma four:
+       * `op201920226mtcorollaug/sp-release-mici` (Recommended)
        * `op201920226mtcorollaug/sp-dev`
      * comma 3X:
        * `op201920226mtcorollaug/sp-release-tizi` (Recommended)
@@ -76,4 +78,4 @@ Users can install a patched version of openpilot or sunnypilot on a comma three 
 ## References
 
 *   **comma.ai openpilot branches**: https://github.com/commaai/openpilot?tab=readme-ov-file#branches
-*   **sunnypilot branches**: https://community.sunnypilot.ai/t/recommended-branch-installations/235
+*   **sunnypilot branches**: https://community.sunnypilot.ai/t/recommended-branches/235
