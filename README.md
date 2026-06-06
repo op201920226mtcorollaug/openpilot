@@ -40,8 +40,7 @@ Users can install a patched version of openpilot or sunnypilot on a comma three 
 2. Choose `Custom Software` when installing the software.
 3. In the text field, enter the following:
    * sunnypilot - _The community of 2019-2022 6MT TSS2 Corolla users recommend this for users with [MADS](#expected-behavior) pre-enabled_
-     * comma four:
-       * **I do not know if this works, please make an issue here or hop on the Discord channel mentioned above to let me know if it works or not**
+     * comma four:       
        * `op201920226mtcorollaug/sp-dev`
      * comma 3X:
        * `op201920226mtcorollaug/sp-release-tizi` (Recommended)
@@ -51,7 +50,6 @@ Users can install a patched version of openpilot or sunnypilot on a comma three 
        * `op201920226mtcorollaug/sp-staging-tici`
    * comma.ai openpilot - _Patched version of comma's software, kept around more for upstreaming preview and testing than actual usage_
      * comma four: `op201920226mtcorollaug/sp-dev`
-       * **I do not know if this works, please make an issue here or hop on the Discord channel mentioned above to let me know if it works or not**
      * comma 3X:`op201920226mtcorollaug/op-nightly-dev`     
      * comma 3: _Not supported_
      * If you have comma hardware issues, it's possible that comma might be lenient with you if you use this for support, but it's really not guaranteed. It's best to switch the device to using comma's unpatched codebase in dashcam mode if you have hardware issues for support.
