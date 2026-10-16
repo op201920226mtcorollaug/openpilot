@@ -160,7 +160,7 @@ class CarState(CarStateBase):
     if (not (self.CP.flags & ToyotaFlags.TSS2) and not (self.CP.flags & ToyotaFlags.UNSUPPORTED_DSU)) or \
        (self.CP.flags & ToyotaFlags.TSS2 and self.acc_type == 1):
       if self.CP.openpilotLongitudinalControl:
-        ret.accFaulted = ret.accFaulted or cp.vl["PCM_CRUISE_2"]["LOW_SPEED_LOCKOUT"] == 2
+        ret.accFaulted = ret.accFaulted or False
 
     pcm_acc_status = cp.vl["PCM_CRUISE"]["CRUISE_STATE"]
     ret.cruiseState.standstill = pcm_acc_status == 7
